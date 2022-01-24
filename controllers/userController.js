@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models');
+const { User } = require('../models');
 
 // Aggregate function to get the number of students overall
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   getSingleUser(req, res) {
-    User.findOne({ __v: req.params.userId })
+    User.findOne({ _id: req.params.userId })
       .select('-__v')
       .then((user) =>
         !user
@@ -26,7 +26,7 @@ module.exports = {
 
   // Delete a student and remove them from the course
   deleteUser(req, res) {
-    User.findOneAndRemove({ __v: req.params.userId })
+    User.findOneAndRemove({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No such user exists' })
@@ -51,7 +51,7 @@ module.exports = {
 
     updateUser(req, res) {
       User.findOneAndUpdate(
-        { __v: req.params.userId },
+        { _id: req.params.userId },
         { $set: req.body },
         { runValidators: true, new: true }
       )
@@ -65,4 +65,31 @@ module.exports = {
           res.status(500).json(err);
         });
     },
+    addFriend(req, res) {
+      User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $addToSet: { friends: req.params.friendId } },
+        { runValidators: true, new: true }
+      )
+        .then((user) =>
+          !user
+            ? res.status(404).json({ message: 'No user with this id!' })
+            : res.json(user)
+        )
+        .catch((err) => res.status(500).json(err));
+    },
+    // Remove application tag. This method finds the application based on ID. It then updates the tags array associated with the app in question by removing it's tagId from the tags array.
+    removeFriend(req, res) {
+      User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $pull: { friends: req.params.friendId } },
+        { runValidators: true, new: true }
+      )
+        .then((user) =>
+          !user
+            ? res.status(404).json({ message: 'No application with this id!' })
+            : res.json(user)
+        )
+        .catch((err) => res.status(500).json(err));
+    }
 };
