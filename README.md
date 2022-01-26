@@ -1,9 +1,6 @@
 # Social Mongoose API
 
 
-everythingElse.mp4
-everythingElse.mp4
-createAndDeleteThought.mp4
 
 
 
