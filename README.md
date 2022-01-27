@@ -1,6 +1,7 @@
 # Social Mongoose API
 
-[![Watch the video](video/everythingElse.gif)
+
+
 
 
 
@@ -8,9 +9,11 @@
 # Description
 This assignment represents a Social Network web application that enables users to share thoughts, add or remove friends from your friends list and even react to any users thoughts.
 
+[![Watch the video](video/everythingElse.gif)
 
+Creating and Deleting Thoughts
 
-
+[![Watch the video](video/createAndDeleteThought.gif)
 
 
 # Table of Contents
@@ -35,27 +38,29 @@ Mongoose and Express
 
 2. You can also filter users by changing their endpoints in accordance to a specific users id.
 
-![](img/loginSal.png)
+![](img/userById.png)
 
-3. You can create users by populating json with correct parameters.
+3. You can create and delete users by populating json with correct parameters.
 
-![](img/editAndCreateBlog.png)
+![](img/createUser.png)
 
-![](img/deleteBlog.png)
+![](img/deleteUser.png)
 
-4. You are also able to add comments to other existing blogs once youre logged in.
+4. You are also able to add and delete friends by including their ids at their endpoints.
 
-![](img/addingComments.png)
+![](img/addFriend.png)
 
-5. You also have the option to sign up a new account. There is a link in the login window that allows you to sign up instead.
+![](img/deleteFriend.png)
 
-![](img/signUp.png)
+5. Users can have thoughts and thoughts can also have their own reactions field in which they can add or delete their reactions. .
 
-6. After signing up on your new account, then you are redirected to your dashboard where you can start making and editing your own blogs as a new user.
+![](img/createThought.png)
+![](img/deleteThought.png)
+![](img/createReaction.png)
+![](img/deleteReaction.png)
 
-![](img/newAcctDash.png)
 
-![](img/newAcctAddBlogs.png)
+
 
 
 
