@@ -1,15 +1,15 @@
 # Social Mongoose API
 
+[![Watch the video](video/everythingElse.gif)
 
 
 
 
 # Description
-This is a CMS-style blog site that publishes and edits blog posts as well as making comments on other blog posts.
-This comes with full blog editing, login and signup capabilities as well as using session storage to personalize your own profile.
+This assignment represents a Social Network web application that enables users to share thoughts, add or remove friends from your friends list and even react to any users thoughts.
 
 
-![](img/homepage.png)
+
 
 
 
@@ -24,20 +24,20 @@ This comes with full blog editing, login and signup capabilities as well as usin
 ## Installation
 ### You will need to install the following dependencies prior to running the application:</br>
 
-Bcrypt, connect-session-sequelize, dotenv, express-handlebars, express-session, mysql2 and sequelize.
+Mongoose and Express
 
 ## Usage 
 ### Below are the following steps required to run this application:</br>
 
-1. When application is deployed, you will be directed to the homepage where you wont be able to access the dashboard or make any comments on existing blogs unless youre logged in.
+1. With insomnia deployed is deployed and you have populated the /users endpoint, you will be presented with all the users.
 
-![](img/commentsNoLog.png)
+![](img/getAllUsers.png)
 
-2. Whenever you decide on loggin in, you will be presented with a form to insert your credentials to login.
+2. You can also filter users by changing their endpoints in accordance to a specific users id.
 
 ![](img/loginSal.png)
 
-3. After logging in, you will be directed to your own personal dashboard in which you can ADD, UPDATE and DELETE your blogs to your hearts content.
+3. You can create users by populating json with correct parameters.
 
 ![](img/editAndCreateBlog.png)
 
